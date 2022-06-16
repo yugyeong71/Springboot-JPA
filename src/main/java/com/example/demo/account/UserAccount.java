@@ -14,7 +14,7 @@ public class UserAccount extends User { // Principal 객체로 사용할 것임
 
     private Account account;
 
-    public UserAccount(Account account){
+    public UserAccount(Account account) {
         super(account.getNickname(), account.getPassword(), List.of(new SimpleGrantedAuthority("ROLE_USER")));
         this.account = account;
     }

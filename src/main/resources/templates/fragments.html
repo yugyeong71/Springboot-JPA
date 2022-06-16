@@ -8,6 +8,7 @@
     <title>StudyOlle</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/node_modules/@yaireo/tagify/dist/tagify.css">
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/node_modules/jdenticon/dist/jdenticon.min.js"></script>
@@ -15,12 +16,18 @@
         .container {
             max-width: 100%;
         }
+
+        .tagify-outside{
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
     </style>
 </head>
 
 <nav th:fragment="main-nav" class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="/" th:href="@{/}">
-        <img src="/images/logo_sm.jpg" width="35" height="35">
+        <img src="/images/logo_sm.jpg" width="30" height="30">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -62,7 +69,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="userDropdown">
                     <h6 class="dropdown-header">
-                        <span sec:authentication="name">Username</span>a
+                        <span sec:authentication="name">Username</span>
                     </h6>
                     <a class="dropdown-item" th:href="@{'/profile/' + ${#authentication.name}}">프로필</a>
                     <a class="dropdown-item" >스터디</a>
@@ -79,7 +86,7 @@
 
 <footer th:fragment="footer">
     <div class="row justify-content-center">
-        <img class="mb-2" src="/images/logo_sm.jpg" alt="" width="40">
+        <img class="mb-2" src="/images/logo_sm.jpg" alt="" width="35">
         <small class="d-block mb-3 text-muted">&copy; 2022</small>
     </div>
 </footer>

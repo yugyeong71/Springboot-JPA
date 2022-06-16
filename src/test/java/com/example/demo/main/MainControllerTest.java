@@ -2,7 +2,7 @@ package com.example.demo.main;
 
 import com.example.demo.account.AccountRepository;
 import com.example.demo.account.AccountService;
-import com.example.demo.account.SignUpForm;
+import com.example.demo.account.form.SignUpForm;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

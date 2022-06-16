@@ -1,20 +1,16 @@
 package com.example.demo.account;
 
+import com.example.demo.account.form.SignUpForm;
+import com.example.demo.account.validator.SignUpFormValidator;
 import com.example.demo.domain.Account;
 import lombok.RequiredArgsConstructor;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import javax.naming.AuthenticationException;
 import javax.validation.Valid;
-import java.time.LocalDateTime;
 
 @Controller
 @RequiredArgsConstructor
@@ -111,7 +107,7 @@ public class AccountController {
 
         if (!account.canSendConfirmEmail()) {
             model.addAttribute("error", "이메일 로그인은 1시간 뒤에 사용할 수 있습니다.");
-            return "account/email-login";
+            //return "account/email-login";
         }
 
         accountService.sendLoginLink(account);
